@@ -1,4 +1,4 @@
-FROM alpine
+FROM storezhang/alpine
 
 LABEL maintainer="NGINX Docker Maintainers <storezhang@gmail.com>"
 LABEL architecture="AMD64/x86_64" version="latest" build="2019-03-14"
