@@ -2,14 +2,15 @@ kind: pipeline
 name: docker-nginx
 
 clone:
-  git:
-    image: plugins/git
-    recursive: true
-    submodule_override:
-      modules/headers-more-nginx-module: https://github.com/openresty/headers-more-nginx-module.git
-      modules/nginx-dav-ext-module: https://github.com/arut/nginx-dav-ext-module.git
+  depth: 50
 
 steps:
+  - name: submodule
+    image: docker:git
+    commands:
+      - git submodule update --recursive --remote
+
+
   - name: docker
     image: plugins/docker
     pull: always
