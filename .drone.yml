@@ -8,17 +8,11 @@ steps:
   - name: clone
     image: plugins/git
     recursive: true
-    commands:
-      - ls modules/nginx-dav-ext-module
 
 
   - name: docker
     image: plugins/docker
     pull: always
-    when:
-      event:
-        - pull_request
-        - tag
     settings:
       repo: storezhang/nginx
       dockerfile: ./Dockerfile
