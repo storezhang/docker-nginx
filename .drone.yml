@@ -5,7 +5,7 @@ clone:
   depth: 50
 
 steps:
-  - name: clone
+  - name: submodule
     image: docker:git
     commands:
       - git submodule update --recursive --remote
