@@ -9,6 +9,7 @@ steps:
     image: docker:git
     commands:
       - git --version
+      - git clone $DRONE_REMOTE_URL
       - git submodule update --init --recursive
       - ls modules/nginx-dav-ext-module
 
