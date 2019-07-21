@@ -5,6 +5,7 @@ steps:
   - name: submodules
     image: docker:git
     commands:
+      - git --version
       - git submodule update --recursive --remote
       - ls modules/nginx-dav-ext-module
 
