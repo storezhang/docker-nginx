@@ -1,11 +1,14 @@
 kind: pipeline
 name: docker-nginx
 
+clone:
+  disable: true
+
 steps:
-  - name: submodules
-    image: docker:git
+  - name: clone
+    image: plugins/git
+    recursive: true
     commands:
-      - git submodule pull --recursive --remote
       - ls modules/nginx-dav-ext-module
 
 
