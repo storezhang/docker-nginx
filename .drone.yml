@@ -3,14 +3,10 @@ name: docker-nginx
 
 clone:
   depth: 50
+  recursive: true
+  submodule_update_remote: true
 
 steps:
-  - name: submodule
-    image: docker:git
-    commands:
-      - git submodule update --recursive --remote
-
-
   - name: docker
     image: plugins/docker
     pull: always
