@@ -2,14 +2,13 @@ kind: pipeline
 name: docker-nginx
 
 clone:
-  disable: true
+  recursive: true
 
 steps:
-  - name: clone
+  - name: submodules
     image: docker:git
     commands:
-      - git clone $DRONE_REMOTE_URL
-      - git checkout $DRONE_COMMIT
+      - ls modules/nginx-dav-ext-module
 
 
   - name: docker
