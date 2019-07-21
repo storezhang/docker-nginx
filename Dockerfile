@@ -1,4 +1,4 @@
-FROM storezhang/alpine:3.9
+FROM alpine:3.9
 
 LABEL maintainer="NGINX Docker Maintainers <storezhang@gmail.com>"
 LABEL architecture="AMD64/x86_64" version="latest" build="2019-03-14"
@@ -7,7 +7,10 @@ ENV NGINX_VERSION 1.17.1
 
 ADD modules /modules/
 
-RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
+RUN set -x \
+    && echo 'https://mirrors.ustc.edu.cn/alpine/v3.9/main'>/etc/apk/repositories \
+    && echo 'https://mirrors.ustc.edu.cn/alpine/v3.9/community'>>/etc/apk/repositories \
+    && GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
     && CONFIG="\
         --prefix=/etc/nginx \
         --sbin-path=/usr/sbin/nginx \
@@ -138,6 +141,7 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
     # Bring in tzdata so users could set the timezones through the environment
     # variables
     && apk add --no-cache tzdata \
+    && cp /usr/share/zoneinfo/Asia/Chongqing /etc/localtime \
     \
     # forward request and error logs to docker log collector
     && ln -sf /dev/stdout /var/log/nginx/access.log \
