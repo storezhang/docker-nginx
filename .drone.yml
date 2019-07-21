@@ -1,0 +1,21 @@
+kind: pipeline
+name: yapi
+
+steps:
+  - name: docker
+    image: plugins/docker
+    pull: always
+    when:
+      event:
+        - pull_request
+        - tag
+    settings:
+      repo: storezhang/nginx
+      dockerfile: ./Dockerfile
+      mirror: https://docker.mirrors.ustc.edu.cn
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      auto_tag: true
+      force_tag: true

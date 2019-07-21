@@ -2,5 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/modules/headers-more-nginx-module" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/modules/nginx-dav-ext-module" vcs="Git" />
   </component>
 </project>
