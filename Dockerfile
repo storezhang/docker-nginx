@@ -3,7 +3,7 @@ FROM alpine:3.9
 LABEL maintainer="NGINX Docker Maintainers <storezhang@gmail.com>"
 LABEL architecture="AMD64/x86_64" version="latest" build="2019-03-14"
 
-ENV NGINX_VERSION 1.15.9
+ENV NGINX_VERSION 1.17.1
 
 ADD modules /modules/
 
