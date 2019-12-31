@@ -334,6 +334,12 @@
     <MESSAGE value="打包1.17.1" />
     <option name="LAST_COMMIT_MESSAGE" value="打包1.17.1" />
   </component>
+  <component name="WindowStateProjectService">
+    <state x="-1304" y="133" key="CommitChangelistDialog2" timestamp="1577767880171">
+      <screen x="-1858" y="0" width="1858" height="1080" />
+    </state>
+    <state x="-1304" y="133" key="CommitChangelistDialog2/63.0.1217.720/-1858.0.1858.1080@-1858.0.1858.1080" timestamp="1577767880171" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
