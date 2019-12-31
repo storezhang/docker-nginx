@@ -8,8 +8,8 @@ ENV NGINX_VERSION 1.17.6
 ADD modules /modules/
 
 RUN set -x \
-    && echo 'https://mirrors.ustc.edu.cn/alpine/v3.9/main'>/etc/apk/repositories \
-    && echo 'https://mirrors.ustc.edu.cn/alpine/v3.9/community'>>/etc/apk/repositories \
+    && echo 'https://mirrors.ustc.edu.cn/alpine/v3.11/main'>/etc/apk/repositories \
+    && echo 'https://mirrors.ustc.edu.cn/alpine/v3.11/community'>>/etc/apk/repositories \
     && GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
     && CONFIG="\
         --prefix=/etc/nginx \
